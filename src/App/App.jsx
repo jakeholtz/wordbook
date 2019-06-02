@@ -2,14 +2,16 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Card from './components/Card.jsx';
 import Arrow from './components/Arrow.jsx';
-import { cardData, currCardIndex } from './Data.jsx';
+import { cardData } from './Data.jsx';
 import PropTypes from 'prop-types';
 import styles from "./App.less";
+
+console.log(cardData);
 
 export default class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { loading : true, currCardIndex };
+    this.state = { loading : true, currCardIndex: new Date().getDate() - 1};
     this.changeCard = this.changeCard.bind(this);
     this.propTypes = { waitBeforeShow: PropTypes.number.isRequired };
   }
